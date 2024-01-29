@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/utils.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <title>Mo Blog</title>
-</head>
+<head data-th-replace="~{fragment :: head-section}"></head>
+
 <body>
-    blog Page works!
+    <header data-th-replace="~{fragment :: header-section}"></header>
+
+    <main>
+        <section>
+            <div data-th-replace="~{fragment :: link-section(url='/blogs',name='Back to home')}"></div>
+            <div class="blog-container">
+                <h2 datea-th-text="$">Heading 1</h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consectetur sint magnam aspernatur sed
+                   
+                    Corrupti, odit expedita, cum perspiciatis temporibus repellat qui consectetur sed minima optio
+                    fugiat atque deleniti eligendi non consequatur reiciendis voluptates rerum dolor corporis quos
+                    laboriosam cupiditate laudantium placeat! Quia, aliquam?
+                    Perspi
+                    Maxime voluptatum deserunt molestiae voluptate recusandae consequatur, obcaecati nulla minus
+                    repellendus modi tenetur dolore aspernatur dolor illum ipsam illo facere deleniti explicabo enim?
+                    Vero aperiam neque ipsa facere, porro id.</p>
+
+            </div>
+        </section>
+    </main>
 </body>
+
+</html>
