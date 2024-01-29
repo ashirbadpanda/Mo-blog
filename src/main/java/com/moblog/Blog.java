@@ -1,4 +1,4 @@
-package com.mobloh.moblog;
+package com.moblog;
 
 import lombok.Data;
 
@@ -6,5 +6,4 @@ import lombok.Data;
 public class Blog {
     private String heading;
     private String description;
-
 }
