@@ -1,6 +1,6 @@
 package com.mobloh.moblog;
 
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -10,16 +10,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import jakarta.servlet.http.HttpServletRequest;
-
-
 
 @Controller
 public class BlogController {
     private final List<Blog> blogs;
 
     public BlogController(){
-        blogs = new ArrsyList<>();
+        blogs = new ArrayList<>();
     }
 
 
@@ -30,14 +27,19 @@ public class BlogController {
     }
 
     @GetMapping("/blog")
-    public String blog(@ModelAttribute int id, Model model) {
+    public String blog(@RequestParam int id, Model model) {
         var blog = blogs.get(id);
         model.addAttribute("blog", blog);
         return "blog";
     }
 
+    @GetMapping("/add-blog")
+    public String addBlog() {
+        return "add-blog";
+    }
+
     @PostMapping("/add-blog")
-    public void addBlog(@ModelAttribute Blog blog, PrintWriter pw) {
+    public String addBlog(@ModelAttribute Blog blog) {
         blogs.add(blog);
         return "redirect:/blogs";
     }
