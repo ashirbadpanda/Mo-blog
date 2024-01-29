@@ -1,4 +1,4 @@
-package com.mobloh.moblog;
+package com.moblog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,19 +10,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @Controller
 public class BlogController {
     private final List<Blog> blogs;
 
-    public BlogController(){
+    public BlogController() {
         blogs = new ArrayList<>();
     }
 
-
-    @GetMapping({"/","/blogs"})
-    public String blogs(Model model){
-        model.addAttribute("blogs",blogs);
+    @GetMapping({ "/", "/blogs" })
+    public String blogs(Model model) {
+        model.addAttribute("blogs", blogs);
         return "blogs";
     }
 
@@ -43,5 +41,4 @@ public class BlogController {
         blogs.add(blog);
         return "redirect:/blogs";
     }
-    
 }

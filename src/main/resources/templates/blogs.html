@@ -11,11 +11,11 @@
             <div data-th-replace="~{fragment :: link-section(url='/add-blog',name='Create blog')}"></div>
 
             <div class="blogs">
-                <article class="blog" data-th-each="blog,loop:${blogs}">
+                <article class="blog" data-th-each="blog, loop : ${blogs}">
                     <h2 data-th-text="${loop.index}"></h2>
                     <h2 data-th-text="${blog.heading}"></h2>
-                    <h2 data-th-text="${blog.description}"></h2>
-                    <a data-th-href="|/blog?id=${loop.index}">Explore</a>
+                    <p data-th-text="${blog.description}"></p>
+                    <a data-th-href="|/blog?id=${loop.index}|">Explore</a>
                 </article>
             </div>
         </section>
