@@ -9,18 +9,10 @@
     <main>
         <section>
             <div data-th-replace="~{fragment :: link-section(url='/blogs',name='Back to home')}"></div>
-            <div class="blog-container">
-                <h2 datea-th-text="$">Heading 1</h2>
+            <div class="blog-container" data-th-object="${blog}">
+                <h2 data-th-text="*{heading}"></h2>
                 <hr>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consectetur sint magnam aspernatur sed
-                   
-                    Corrupti, odit expedita, cum perspiciatis temporibus repellat qui consectetur sed minima optio
-                    fugiat atque deleniti eligendi non consequatur reiciendis voluptates rerum dolor corporis quos
-                    laboriosam cupiditate laudantium placeat! Quia, aliquam?
-                    Perspi
-                    Maxime voluptatum deserunt molestiae voluptate recusandae consequatur, obcaecati nulla minus
-                    repellendus modi tenetur dolore aspernatur dolor illum ipsam illo facere deleniti explicabo enim?
-                    Vero aperiam neque ipsa facere, porro id.</p>
+                <p data-th-text="*{description}"></p>
 
             </div>
         </section>
